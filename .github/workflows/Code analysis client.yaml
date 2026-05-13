@@ -21,16 +21,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - run: cd jaeger-client && mvn compile package
-      - name: create sonar-project.properties file
-        run: |
-          ls -la
-          echo "sonar.projectKey=jaeger-client" > jaeger-client/sonar-project.properties
-          echo "sonar.projectName=Jaeger Client" >> jaeger-client/sonar-project.properties
-          echo "sonar.organization=gowtham-devops" >> jaeger-client/sonar-project.properties
-          echo "sonar.sources=src/main/java" >> jaeger-client/sonar-project.properties
-          echo "sonar.tests=src/test/java" >> jaeger-client/sonar-project.properties
-          echo "sonar.java.binaries=target/classes" >> jaeger-client/sonar-project.properties
-     # - run: cd app &&mvn clean test jacoco:report sonar:sonar    
       - name: sonarqube static code analyze
         uses: sonarSource/sonarqube-scan-action@v7.0.0
         env:
@@ -44,5 +34,5 @@ jobs:
         with:
           image-name: tracing-client:latest
 
-          
+
         
