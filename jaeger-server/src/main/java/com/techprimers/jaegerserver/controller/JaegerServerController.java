@@ -20,7 +20,7 @@ public class JaegerServerController {
   public Mono<String> hello() {
     return jaegerServerService.hello();
   }
-  @GetMapping("server/product{id}")
+  @GetMapping("server/product/{id}")
   public Mono<String> get(@PathVariable("id") Integer id) {
     return jaegerServerService.get(id);
   }

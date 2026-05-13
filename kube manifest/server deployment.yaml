@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: gowthamarumugam/tracing-server:9
+          image: gowthamarumugam/tracing-server:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8082

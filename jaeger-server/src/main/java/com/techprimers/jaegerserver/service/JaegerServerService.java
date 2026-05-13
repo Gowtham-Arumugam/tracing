@@ -22,6 +22,6 @@ public class JaegerServerService {
   }
 
   public Mono<String> hello() {
-    return Mono.just("Hello from Jaeger Server");
+    return Mono.just("Hello from Jaeger Server Service");
   }
 }
