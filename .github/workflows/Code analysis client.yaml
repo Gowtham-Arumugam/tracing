@@ -24,7 +24,7 @@ jobs:
       - name: sonarqube static code analyze
         uses: sonarSource/sonarqube-scan-action@v7.0.0
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: 'jaeger-client'
       - name: Build Docker Image
