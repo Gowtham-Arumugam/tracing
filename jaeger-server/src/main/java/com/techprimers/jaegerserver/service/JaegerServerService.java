@@ -20,4 +20,8 @@ public class JaegerServerService {
         .retrieve()
         .bodyToMono(String.class);
   }
+
+  public Mono<String> hello() {
+    return Mono.just("Hello from Jaeger Server");
+  }
 }

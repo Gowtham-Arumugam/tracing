@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/server/product")
+@RequestMapping("/")
 public class JaegerServerController {
 
   private JaegerServerService jaegerServerService;
@@ -16,8 +16,11 @@ public class JaegerServerController {
   public JaegerServerController(JaegerServerService jaegerServerService) {
     this.jaegerServerService = jaegerServerService;
   }
-
-  @GetMapping("/{id}")
+  @GetMapping("hello")
+  public Mono<String> hello() {
+    return jaegerServerService.hello();
+  }
+  @GetMapping("server/product{id}")
   public Mono<String> get(@PathVariable("id") Integer id) {
     return jaegerServerService.get(id);
   }

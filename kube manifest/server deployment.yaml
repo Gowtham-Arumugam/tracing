@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - name: server
-          image: gowthamarumugam/tracing-server:latest
+          image: gowthamarumugam/tracing-server:9
           imagePullPolicy: Always
           ports:
             - containerPort: 8082
           env:
-            - name: BACKEND_HOST
+            - name: BACKEND_HOSTs
               value: "https://api.restful-api.dev"
