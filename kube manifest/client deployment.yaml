@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tracing
+      microservice: client
+  template:
+    metadata:
+      labels:
+        app: tracing
+        microservice: client
+    spec:
+      containers:
+        - name: client
+          image: gowthamarumugam/observability-client:3
+          ports:
+            - containerPort: 8081 

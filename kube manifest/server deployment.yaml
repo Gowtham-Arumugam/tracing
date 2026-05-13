@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tracing
+      microservice: server
+  template:
+    metadata:
+      labels:
+        app: tracing
+        microservice: server
+    spec:
+      containers:
+        - name: server
+          image: gowthamarumugam/observability-server:5
+          ports:
+            - containerPort: 8082
