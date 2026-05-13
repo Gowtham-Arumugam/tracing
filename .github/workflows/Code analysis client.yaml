@@ -1,4 +1,4 @@
-name: SonarQube & trivy code analysis -client
+name: code analysis - client
 on: 
   push:
     branches:
