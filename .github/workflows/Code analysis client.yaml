@@ -43,4 +43,6 @@ jobs:
         uses: NullPointerWorks/trivy-image-scan-action@v1
         with:
           image-name: tracing-client:latest
+
+          
         
