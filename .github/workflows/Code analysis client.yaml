@@ -28,7 +28,7 @@ jobs:
         with:
           projectBaseDir: 'jaeger-client'
       - name: Build Docker Image
-        run: docker build -t java-app:latest jaeger-client/
+        run: docker build -t tracing-client:latest jaeger-client/
       - name: docker image scan with trivy
         uses: NullPointerWorks/trivy-image-scan-action@v1
         with:
