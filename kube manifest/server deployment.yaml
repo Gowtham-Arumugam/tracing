@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: server
-          image: gowthamarumugam/observability-server:7
+          image: gowthamarumugam/tracing-server:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8082
           env:
