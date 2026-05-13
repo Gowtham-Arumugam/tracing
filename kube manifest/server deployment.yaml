@@ -19,3 +19,6 @@ spec:
           image: gowthamarumugam/observability-server:5
           ports:
             - containerPort: 8082
+          env:
+            - name: BACKEND_HOST
+              value: "https://api.restful-api.dev"

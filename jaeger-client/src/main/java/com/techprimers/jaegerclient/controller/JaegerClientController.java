@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/jaeger/client")
+@RequestMapping("/client/product")
 public class JaegerClientController {
 
   private JaegerClientService jaegerClientService;
