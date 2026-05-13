@@ -1,14 +1,11 @@
 package com.techprimers.jaegerserver.service;
-
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @Service
 public class JaegerServerService {
-  @Value("${BACKEND_HOST}")
-  private String BACKEND_HOST;
+  String BACKEND_HOST = System.getenv("BACKEND_HOST");
 
   private WebClient webClient;
 
@@ -18,7 +15,7 @@ public class JaegerServerService {
 
   public Mono<String> get(Integer id) {
 
-    return webClient.get() 
+    return webClient.get()
         .uri(BACKEND_HOST + "/objects/" + id)
         .retrieve()
         .bodyToMono(String.class);
