@@ -5,7 +5,7 @@ FROM gcr.io/distroless/java21-debian13:nonroot
 
 
 COPY ./target/jaeger-client-0.0.1-SNAPSHOT.jar demo.jar
-EXPOSE 8080
+EXPOSE 8081
 
 ENTRYPOINT [ "java", "-jar", "demo.jar" ]
 
